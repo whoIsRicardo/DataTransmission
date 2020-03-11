@@ -153,7 +153,7 @@ f = -fs/2:fs/N:(fs/2-fs/N);
 %h)
 figure(2)
 plot(f,abs(G))
-xlim([-2 2])
+xlim([-4 4])
 title('Sinal G(f)')
 ylabel('G(f)')
 xlabel('f(Hz)')
