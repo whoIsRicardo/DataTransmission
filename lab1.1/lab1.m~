@@ -1,0 +1,121 @@
+clear
+clc 
+close all 
+
+%a
+t = -100 : 0.05 : 100.05;
+
+N = length(t);
+
+g = sinc(t); 
+
+figure(1)
+%grid on
+subplot(1,2,1)
+plot(t,g,'b');
+%axis([xmin xmax ymin ymax]) 
+axis([-100 100 -1 1]) 
+title('Sinal g(t)')
+ylabel('g(t)')
+xlabel('t(s)')
+%legend('Cosseno','Seno')
+
+
+subplot(1,2,2)
+plot(t,g,'b-o');
+grid on
+xlim([-3 3]) 
+%xlim([xmin xman]) 
+%axis([xmin xmax ymin ymax]) 
+%axis([-3 3 -1 1]) 
+title('Sinal g(t)')
+ylabel('g(t)')
+xlabel('t(s)')
+
+%f)
+G = fftshift(fft(g));
+%g)
+T=0.05;
+fs=1/T;
+f = -fs/2:fs/N:(fs/2-fs/N);
+%h)
+figure(2)
+plot(f,abs(G)*T)
+xlim([-2 2])
+title('Sinal G(f)')
+ylabel('G(f)')
+xlabel('f(Hz)')
+
+%i)
+
+figure(3)
+pwelch(g,[ ],[ ],N,fs)
+title('Densidade Espectral Estimada')
+
+
+%% Exercício 2
+clear
+clc 
+close all 
+
+%a
+t = -100 : 0.05 : 100.05;
+
+N = length(t);
+
+g = 1*(abs(t)<1/2); 
+
+figure(1)
+%grid on
+subplot(1,2,1)
+plot(t,g,'b');
+%axis([xmin xmax ymin ymax]) 
+axis([-100 100 -1 1]) 
+title('Sinal g(t)')
+ylabel('g(t)')
+xlabel('t(s)')
+%legend('Cosseno','Seno')
+
+
+subplot(1,2,2)
+plot(t,g,'b-o');
+grid on
+xlim([-3 3]) 
+%xlim([xmin xman]) 
+%axis([xmin xmax ymin ymax]) 
+%axis([-3 3 -1 1]) 
+title('Sinal g(t)')
+ylabel('g(t)')
+xlabel('t(s)')
+
+%f)
+G = fftshift(fft(g));
+%g)
+T=0.05;
+fs=1/T;
+f = -fs/2:fs/N:(fs/2-fs/N);
+%h)
+figure(2)
+plot(f,abs(G)*T)
+xlim([-2 2])
+title('Sinal G(f)')
+ylabel('G(f)')
+xlabel('f(Hz)')
+
+%i)
+
+figure(3)
+pwelch(g,[ ],[ ],N,fs)
+title('Densidade Espectral Estimada')
+
+%% Exercício 3
+
+
+
+
+
+
+
+
+
+
