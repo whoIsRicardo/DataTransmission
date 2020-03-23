@@ -68,7 +68,33 @@ xlim([-80 80])
 ylabel('S(f)')
 xlabel('f(Hz)')
 
-%%
+%% 2 - a)
+fc = 20* (10^3);
+c = cos(2*pi*fc*t);
+vt = s.*c;
+fcorte = 6000/(fs/2);
+h = fir1(2000,fcorte);
+[H, fh] = freqz(h,1,N/2+1,fs/1000) ;
+H = abs(H);
+vo = filter(h,1,vt);
+
+
+
+
+
+%% 2 - b)
+
+%% 2 - c)
+
+%% 2 - d)
+
+%% 2 - e)
+
+%% 3 - a)
+
+%% 3 - b)
+
+%%  4 - 
 
 
 
